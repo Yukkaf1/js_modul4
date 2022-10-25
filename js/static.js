@@ -1851,29 +1851,29 @@ let friends = [
 
 
 //     updatePotionName(oldName, newName) {
-//         for (let i = 0; i < this.potions.length; i += 1) {
-//            const item = this.potions[i];
+        // for (let i = 0; i < this.potions.length; i += 1) {
+        //    const item = this.potions[i];
        
-//            if (item.name === oldName) {
-//             this.potions.splice(i, 1, newName);
+        //    if (item.name === oldName) {
+        //     this.potions.splice(i, 1, newName);
             
-//            }
-//            return `Potion ${oldName} is not in inventory!`;
-//         }
-//          },
+        //    }
+        //    return `Potion ${oldName} is not in inventory!`;
+        // }
+        //  },
 
 //     updatePotionName2 (oldName, newName) {
-//       // let potionFound = false;
-//       for (const potion of this.potions) { 
+    //   let potionFound = false;
+    //   for (const potion of this.potions) { 
           
-//         if (potion.name === oldName) {
-//             potion.name = newName;
-//             // potionFound = true;
-//              }
-//             //  if (!potionFound) {
-//             //   return`Potion ${oldName} is not in inventory!`;}
-//            }
-//           },
+    //     if (potion.name === oldName) {
+    //         potion.name = newName;
+    //         // potionFound = true;
+    //          }
+    //         //  if (!potionFound) {
+    //         //   return`Potion ${oldName} is not in inventory!`;}
+    //        }
+    //       },
 
 //     // Change code above this line
 //   };
@@ -1910,16 +1910,590 @@ let friends = [
 
 // fnA ("jhl", fnB);
 
+
+
+//================================== MODUL 3 - 41 DUBLE - RICHT
+
+// const atTheOldToad = {
+//     potions: [
+//       { name: "Speed potion", price: 460 },
+//       { name: "Dragon breath", price: 780 },
+//       { name: "Stone skin", price: 520 },
+//     ],
+//     // Change code below this line
+//     getPotions() {
+//       return this.potions;
+//     },
+
+//      addPotion(newPotion) {
+//         let itemFound = false;
+//           for (const potion of this.potions) {
+//         if (potion.name === newPotion.name) {
+//             itemFound = true;
+//           return `Error! Potion ${newPotion.name} is already in your inventory!`;
+//         }
+//     }
+//         if (!itemFound) { this.potions.push(newPotion)}
+      
+
+//       },
+    
+//     removePotion(potionName) {
+//         let itemFound = false;
+//         for (let i = 0; i < this.potions.length; i += 1) {
+//             const item = this.potions[i];
+           
+//             if (item.name === potionName) {
+//                 itemFound = true;
+//                 console.log("find product", potionName);
+//                 this.potions.splice(i,1);
+//             }
+        
+//           }
+//         if (!itemFound) {
+//           return `REMOVE Error Potion ${potionName} is not in inventory!`;}
+//     },
+    
+//     updatePotionName(oldName, newName) {
+//    let potionFound = false;
+//         for (const potion of this.potions) { 
+            
+//           if (potion.name === oldName) {
+//               potion.name = newName;
+//               // potionFound = true;
+//                }
+//               //  if (!potionFound) {
+//               //   return`Potion ${oldName} is not in inventory!`;}
+//              }
+//             },
+//     // Change code above this line
+//   };
+
+// //   newPotion1 = {
+//     // //     name:"Spice",
+//     // //     price: 780,
+//     // //   }
+//     //   // console.log(atTheOldToad.getPotions());
+//     // //   console.log(atTheOldToad.addPotion({
+//     // //     name:"Spice",
+//     // //     price: 780,
+//     // //   }));
+//     // // console.log(atTheOldToad.removePotion("Speed"));
+//     // // console.log(atTheOldToad.removePotion("Stone skin"));
+//     //   // console.log(atTheOldToad.removePotion2("Speed potion"));
+//     // // console.log(atTheOldToad.removePotion("Stone skin"));
+//     //   console.log(atTheOldToad.getPotions());
+//     //   console.log(atTheOldToad.updatePotionName2("Stone skin", "Dragon"));
+//     //   console.log(atTheOldToad.getPotions());
+
+// console.log(atTheOldToad.removePotion('Dragon breath'));
+// console.log(atTheOldToad.getPotions());
+
+
+
+
+
+
 // ======================= MODUL 4 CALLBACK
 
-const filter = function (array) {
-    const filteredArray = [];
 
-    for (const el of array) {
-console.log(el);
-    }
-    return filteredArray;
-};
+// // === FILTER ARR
 
-console.log(filter([1, 2, 3, 4, 5]));
-console.log(filter([1, 2, 3, 4, 5, 6, 7, 8]));
+// const filter = function (array, test) {
+//     const filteredArray = [];
+
+//     for (const el of array) {
+// console.log(el);
+// console.log(test(el));
+// const passed = test(el);
+
+// if (passed) {
+//     filteredArray.push(el);
+// }
+//     }
+//     return filteredArray;
+// };
+
+// const callback1 = function (value) {
+//     return value >= 3; // === TRUE - FALSE
+// }
+
+
+// // console.log(filter([1, 2, 3, 4, 5], callback1));
+// console.log(filter([1, 2, 3, 4, 5, 6, 7, 8], function (value)
+//  {return value <=4}));
+
+
+// ============================= FILTER FRUITS
+
+// const fruits = [
+//     {id: "5", name: "pear", price: 35, qty: 300, category: "fruits"},
+//     {id: "5", name: "pear", price: 535, qty: 800, category: "fruits"},
+//     {id: "6", name: "appel", price: 45, qty: 800, category: "fruits"},
+//     {id: "7", name: "melon", price: 95, qty: 580, category: "fruits"},
+//     {id: "8", name: "lime", price: 150, qty: 380, category: "citrus"},
+//     {id: "9", name: "potato", price: 5, qty: 180, category: "vegetables"}
+// ];
+
+// const filter = function (array, test) {
+//         const filteredArray = [];
+    
+//         for (const el of array) {
+//     console.log(el);
+//     console.log(test(el));
+//     const passed = test(el);
+    
+//     if (passed) {
+//         filteredArray.push(el);
+//     }
+//         }
+//         return filteredArray;
+//     };
+    
+
+// console.log(filter(fruits, function ({price}) {return price <=100}));
+
+// ======================================= замыкание
+
+// const fnA = function (parameter) {
+//     const innerVariable = "значение переменной fnA";
+//     const innerFunction = function () {
+//         console.log(parameter);
+//         console.log(innerVariable);
+//         console.log("это вызов innerFunction");
+//     };
+
+//     return innerFunction;
+// };
+
+// const fnB = fnA(555);
+// fnB();
+// console.log(fnB);
+
+
+//====================================ПОВАРЕНОК
+
+// const makeDish = function (sheffName, dish) {
+//     console.log(`${sheffName} готовит ${dish}`);
+// };
+
+// // makeDish("Margo", "keks1");
+// // makeDish("Margo", "keks2");
+// // makeDish("Margo", "keks3");
+// // makeDish("Margo", "keks4");
+
+// // makeDish("Poly", "keks8");
+// // makeDish("Poly", "keks9");
+// // makeDish("Poly", "keks10");
+// // makeDish("Poly", "keks11");
+
+// const makeSheff = function (name) {
+//     const makeDish = function (dish) {
+//         console.log(`${name} готовит ${dish}`);
+//     };
+//     return makeDish;
+// };
+
+// const mango = makeSheff("Mango");
+// console.log(mango);
+// mango("котлеты");
+// mango("пирожок");
+
+// const poly = makeSheff("Poly");
+// poly("чай");
+// poly("кофе");
+
+// console.dir(mango);
+
+// ============================== ОКРУГЛЯТОР
+// const floatingPoint = 3.456789;
+// const someInt = Math.round(floatingPoint);
+// const withDecimals = Number(floatingPoint.toFixed(2));
+
+// const rounder = function (number,places) {
+//     return Number (number.toFixed(places));
+// };
+
+// console.log(rounder(3.4567, 2));
+// console.log(rounder(3.4567, 3));
+// console.log(rounder(3.4567, 1));
+
+// =======================callback ZARPLATA
+
+// const salaryManagerFactory = function (emploeeName, baseSalary) {
+//     let salary = baseSalary;
+
+//     return {
+//         raise (amount) {
+//             salary += amount;
+//         },
+//         lower(amount) {
+//             salary += amount;
+//         },
+//         current(){
+//             return `Текущая зарплата ${emploeeName} - ${salary}`;
+//         },
+//     };
+// };
+
+// const salaryManager = salaryManagerFactory("Mango", 5000);
+// console.log(salaryManager);
+// console.log(salaryManager.current());
+// console.log(salaryManager.raise);
+// salaryManager.raise(1000);
+// console.log(salaryManager.current());
+
+//=================== СТРЕЛОЧНЫЕ ФУНКЦИИ
+
+// const add = function (a,b,c) {
+//     console.log(a,b,c);
+//     return a + b + c;
+// };
+
+// console.log(add(5,10,15));
+
+// const addArrow = (a, b, c) => {
+//     console.log(a,b,c);
+//     return a + b + c;
+// };
+
+// console.log(add(5,10,15));
+
+// =============================
+
+// // === FILTER ARR STRELKI
+
+// const filter = (array, test) => {
+//     const filteredArray = [];
+
+//     for (const el of array) {
+// console.log(el);
+// console.log(test(el));
+// const passed = test(el);
+
+// if (passed) {
+//     filteredArray.push(el);
+// }
+//     }
+//     return filteredArray;
+// };
+
+// // const callback1 = function (value) {
+// //     return value >= 3; // === TRUE - FALSE
+// // }
+
+
+
+// // console.log(filter([1, 2, 3, 4, 5], callback1));
+
+// console.log(filter([1, 2, 3, 4, 5, 17, 33], value => value >= 8));
+
+// // console.log(filter([1, 2, 3, 4, 5, 6, 7, 8], function (value)
+// //  {return value <=4}));
+
+// console.log(filter([1, 2, 3, 4, 5, 6, 7, 8], value => value <= 4));
+
+//========================= СТРЕЛКИ КАК МЕТОДЫ ОБЬЕКТА запрещено
+
+
+// const user = {
+//     fullName: "Mango",
+//     showName() {
+//         console.log("this: ", this);
+//         console.log("this.fullName: ", this.fullName);
+
+//         const inner = function () {
+//             console.log("this in inner: ", this);
+//         }
+
+//         inner();
+
+//         const inner2 = () => {
+//             console.log("this in inner2 : ", this);
+//         }
+
+//         inner2 ();
+//     },
+// };
+
+// user.showName();
+
+// ======================= СТРЕЛКИ КОНСТРУКТОР запрещено
+
+// const User = function(name) {
+//     this.name = name;
+// };
+
+// console.log(new User("Mango"));
+
+
+// const User2 = name => {
+//     this.name = name;
+// };
+
+// console.log(new User2("Mango"));
+
+// ================================== ПЕРЕБИРАЮЩИЕ МЕТОДЫ МАССИВА
+
+// const numbers = [5, 10, 20, 25];
+
+// numbers.forEach(function(number, index, arr){
+//     console.log(number);
+//     arr[index] = 20;
+// });
+
+// console.log(numbers);
+
+// ========================== MAP
+
+// const numbers = [5, 10, 20, 25];
+
+// const doubledNums = numbers.map(function(number){
+//     console.log(number);
+//     return number*2;
+// });
+// console.log(numbers);
+// console.log(doubledNums);
+
+//==============================
+// const players = [
+//     {id: "player-1", name: "Mango", timePlaed:310, points:54, online: false},
+//     {id: "player-2", name: "Poly", timePlaed:470, points:92, online: true},
+//     {id: "player-3", name: "Kiwi", timePlaed:230, points:48, online: true},
+//     {id: "player-4", name: "Ajax", timePlaed:150, points:71, online: false},
+//     {id: "player-5", name: "Chelsy", timePlaed:80, points:48, online: true},
+// ];
+
+// const playerNames = players.map(player => {
+//     console.log(player);
+//     return player.name;
+// });
+
+// console.log(playerNames);
+
+// const playerId = players.map(player => player.id);
+// console.log(playerId);
+
+// const rest = players.map(({name, id}) => ({
+//         name,
+//         id,
+//     }));
+
+// console.log(rest);
+
+// const updatedPlayers = players.map(player => {
+//     return {
+//         ...player,
+//         points: player.points*1.1,
+//     };
+
+// });
+
+// console.table(updatedPlayers);
+
+
+// const playerIdToUpdate = "player-3";
+// const updatedPlayers = players.map(player => {
+//     console.log(player.id);
+// if (playerIdToUpdate === player.id) {
+// console.log("Find");
+// return {
+//     ...player,
+//     points: player.points + 10,
+// };
+// }  
+// return player;
+// }
+//     );
+
+    // const updatedPlayers = players.map(player =>
+        // playerIdToUpdate === player.id ? {...player, points: player.points + 10,} 
+        // : player,);
+// 
+    // console.table(updatedPlayers);
+
+    // ================ FILTR
+
+//     const numbers = [5, 10, 20, 25];
+
+//     const filterNumbers = numbers.filter ((number) => {
+// return number < 10 || number > 20; // условие И
+//     });
+
+// const filterNumbers = numbers.filter (number => number < 10 || number > 20); // условие И
+   
+//     console.log(filterNumbers);
+
+
+// const players = [
+//     {id: "player-1", name: "Mango", timePlaed:310, points:54, online: false},
+//     {id: "player-2", name: "Poly", timePlaed:470, points:92, online: true},
+//     {id: "player-3", name: "Kiwi", timePlaed:230, points:48, online: true},
+//     {id: "player-4", name: "Ajax", timePlaed:150, points:71, online: false},
+//     {id: "player-5", name: "Chelsy", timePlaed:80, points:48, online: true},
+// ];
+
+
+// const filterPlayers = players.filter(player => !player.online);
+// console.log(filterPlayers);
+
+// const filterPlayers = players.filter(player => player.timePlaed > 200);
+// console.log(filterPlayers);
+
+// const numbers = [5, 10, 20, 25];
+// const number = numbers.find(number => number === 100);
+// console.log(number);
+
+
+// const name = "player-4";
+// const playerFind = players.find(player => player.id === name);
+// console.log(playerFind);
+
+// const playerFind = players.find(({id}) => id === name);
+// console.log(playerFind);
+
+// const playerFindById = (allPlayers, name) => allPlayers.find(({id}) => id === name);
+// console.log(playerFindById(players, "player-2"));
+
+// const isAllOnline = players.every(player => player.online)
+// console.log(isAllOnline);
+
+
+// =============== REDUCE
+// const numbers = [5, 10, 20, 25];
+// const total = numbers.reduce((acc, number) => {
+//     return acc + number;
+// },
+// 0 // первый аккамулятор
+// );
+
+// console.log(total);
+
+// const salary = {
+//     mango: 100,
+//     poly: 50,
+//     ajax: 150,
+// };
+
+
+// const totalSalary = Object.values(salary).reduce((total, value) => total + value, 0);
+// console.log(totalSalary);
+
+
+// const players = [
+//         {id: "player-1", name: "Mango", timePlaed:310, points:54, online: false},
+//         {id: "player-2", name: "Poly", timePlaed:470, points:92, online: true},
+//         {id: "player-3", name: "Kiwi", timePlaed:230, points:48, online: true},
+//         {id: "player-4", name: "Ajax", timePlaed:150, points:71, online: false},
+//         {id: "player-5", name: "Chelsy", timePlaed:80, points:48, online: true},
+//     ];
+
+//     const totalTimePlayed = players.reduce((totalTime, player) =>
+//      totalTime + player.timePlaed, 0);
+
+//      console.log(totalTimePlayed);
+
+//================= КОРЗИНА REDUCE
+
+// const cart = [
+// {label: "Apples", price: 100, quantity: 2},
+// {label: "Melon", price: 200, quantity: 1},
+// {label: "Orange", price: 80, quantity: 5},
+// {label: "Kiwi", price: 120, quantity: 3},
+// ];
+
+// const totalCart = cart.reduce( (total, {price, quantity}) => total + price*quantity, 0 );
+
+// console.log(totalCart);
+
+// ==========================
+// const tweets = [
+//     {id: "000", likes: 5, tags: ["js", "nodejs"]},
+//     {id: "001", likes: 2, tags: ["html", "css"]},
+//     {id: "002", likes: 17, tags: ["html", "js", "nodejs"]},
+//     {id: "003", likes: 8, tags: ["css", "react"]},
+//     {id: "004", likes: 0, tags: ["js", "nodejs", "react"]},
+// ];
+
+// const allTags = tweets.reduce((acc, tweet) =>
+// //  {
+
+//     // tags.push(tweet.tags);
+//     // tags.push(...tweet.tags);
+//     [...acc, ...tweet.tags]
+//     // return tags;
+// // }
+// , []);
+
+// console.log(allTags);
+
+
+// const tagsStat = allTags.reduce((acc, tag) => {
+// console.log(acc);
+
+// // // if (acc[tag]){
+// // //     acc[tag] += 1;
+
+// // //     return acc;
+// // // }
+
+// // // acc[tag] = 1;
+// // // return acc;
+// // // }
+// // // короче
+
+// return {
+//     ...acc, 
+//     [tag]: acc[tag] ? acc[tag] + 1 : 1,};
+
+// }, {});
+
+
+// const user = {
+//     name: "Mango",
+// };
+
+// const key = "name";
+// console.log(user[key]);
+
+// ====================== SORT
+
+// const numbers = [1, 9, 6, 2, 3];
+// // numbers.sort();
+// // console.log(numbers);
+
+// // const letters = ['b', 'a', 's', 'f', 'A']
+// // letters.sort();
+// // console.log(letters);
+
+// // numbers.sort((a, b) => {
+// //     return b - a;
+// // });
+// // console.log(numbers);
+ 
+// // //== нужно сделать копию
+
+// const copy = [...numbers];
+
+// copy.sort((a, b) => {
+//     return b - a;
+// });
+// console.log(copy);
+
+//==================================
+const players = [
+            {id: "player-1", name: "Mango", timePlaed:310, points:54, online: false},
+            {id: "player-2", name: "Poly", timePlaed:470, points:92, online: true},
+            {id: "player-3", name: "Kiwi", timePlaed:230, points:48, online: true},
+            {id: "player-4", name: "Ajax", timePlaed:150, points:71, online: false},
+            {id: "player-5", name: "Chelsy", timePlaed:80, points:48, online: true},
+        ];
+
+        // const playersSort = players.sort((playerA, playerB)=> playerA.timePlaed - playerB.timePlaed,);
+        // console.table(playersSort);
+
+const onlineAndSort = players
+.filter(player => player.online)
+.sort((playerA, playerB) => playerA.timePlaed - playerB.timePlaed);
+
+console.log(onlineAndSort);
